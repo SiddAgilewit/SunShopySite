@@ -5,20 +5,20 @@
 
 :root {
   --base: 24px;
-  --font-body: 'Jost', sans-serif;
-  --font-jost: 'Jost', sans-serif;
+  --font-body: 'Georgia', serif; 
+  --font-jost: 'Jost', sans-serif; 
 
-  --gutter-h: 180px;
-  --block-padding: 120px;
+  --gutter-h: 90px;
+  --block-padding: 80px; // Reduced block padding for desktop
 
   @include large-break {
-    --gutter-h: 144px;
-    --block-padding: 96px;
+    --gutter-h: 94px;
+    --block-padding: 60px; // Further reduce for larger screens
   }
 
   @include mid-break {
     --gutter-h: 24px;
-    --block-padding: 60px;
+    --block-padding: 40px; // Adjust for mid-sized screens
   }
 }
 
@@ -27,13 +27,13 @@
 }
 
 html {
-  @extend %body;
+  @extend %body; 
   background: var(--theme-bg);
   -webkit-font-smoothing: antialiased;
   opacity: 0;
 
-  &[data-theme=dark],
-  &[data-theme=light] {
+  &[data-theme='dark'],
+  &[data-theme='light'] {
     opacity: initial;
   }
 }
@@ -45,7 +45,7 @@ body,
 }
 
 body {
-  font-family: var(--font-jost);
+  font-family: var(--font-body); // Use Georgia for body font
   margin: 0;
   padding: 0;
   color: var(--color-dark-500);
@@ -56,6 +56,8 @@ body {
 
 .main {
   flex: 1 1 auto;
+  background-color: rgba(141, 246, 246, 0.895);
+  padding: var(--block-padding); // Apply adjusted padding
 }
 
 ::selection {
@@ -74,28 +76,14 @@ img {
   display: block;
 }
 
-h1 {
-  @extend %h1;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-body); // Ensure headings use Georgia font
+  @extend %h1; // Ensure %h1 is defined in your imported files
 }
 
-h2 {
-  @extend %h2;
-}
-
-h3 {
-  @extend %h3;
-}
-
-h4 {
-  @extend %h4;
-}
-
-h5 {
-  @extend %h5;
-}
-
-h6 {
-  @extend %h6;
+h1, h2, h3, h4, h5, h6 {
+  font-size: large;
+  line-height: 1.2; 
 }
 
 p {
@@ -114,12 +102,12 @@ a {
   text-decoration: none;
 
   &:focus {
-    opacity: .8;
+    opacity: 0.8;
     outline: none;
   }
 
   &:active {
-    opacity: .7;
+    opacity: 0.7;
     outline: none;
   }
 }

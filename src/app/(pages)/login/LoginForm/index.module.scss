@@ -7,15 +7,19 @@
   flex-direction: column;
   gap: 24px;
   margin-top: 30px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .submit {
   width: 100%;
+  background-color: lightblue;
+  color: Black;
 }
 
 .message {
   margin-bottom: var(--base);
+  text-align: center;
+
 }
 
 .links {

@@ -1,6 +1,5 @@
 import React from 'react'
 import { draftMode } from 'next/headers'
-
 import { Category, Page } from '../../../payload/payload-types'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
@@ -13,6 +12,7 @@ import classes from './index.module.scss'
 
 const Products = async () => {
   const { isEnabled: isDraftMode } = draftMode()
+ 
 
   let page: Page | null = null
   let categories: Category[] | null = null
@@ -28,12 +28,14 @@ const Products = async () => {
   } catch (error) {
     console.log(error)
   }
-
+  console.log(page)
   return (
     <div className={classes.container}>
+      
       <Gutter className={classes.products}>
-        <Filters categories={categories} />
+        <Filters categories={categories}/>
         <Blocks blocks={page?.layout} disableTopPadding={true} />
+       
       </Gutter>
       <HR />
     </div>

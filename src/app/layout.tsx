@@ -1,8 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
 import { Jost } from 'next/font/google'
-
-import { AdminBar } from './_components/AdminBar'
 import { Footer } from './_components/Footer'
 import { Header } from './_components/Header'
 import { Providers } from './_providers'
@@ -17,17 +15,17 @@ const jost = Jost({
   variable: '--font-jost',
 })
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+               
       </head>
       <body className={jost.variable}>
         <Providers>
-          <AdminBar />
           {/* @ts-expect-error */}
           <Header />
           <main className="main">{children}</main>

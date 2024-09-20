@@ -34,16 +34,15 @@
   text-align: end;
 }
 
-.itemsList {
-  border-top: 1px solid var(--color-dark-50);
-}
+
 
 .summary {
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 30px 24px;
-  border: 1px solid var(--color-dark-50);
+  border: 1px solid black;
+  border-radius: 6px;
 }
 
 .row {
@@ -51,5 +50,5 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 16px;
-  border-bottom: 1px solid var(--color-dark-50);
+  border-bottom: 1px solid black;
 }

@@ -17,3 +17,14 @@
 .hide { 
   display: none;
 }
+.LaptopView{
+  display: none;
+}
+@media  screen  and (min-width:767px) {
+  .Mobileview{
+    display: none;
+  }
+  .LaptopView{
+    display: flex;
+  }
+}

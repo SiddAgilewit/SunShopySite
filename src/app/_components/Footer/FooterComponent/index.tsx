@@ -4,7 +4,8 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-
+import SunshopyLogo from '../../../../../public/assets/images/SunshopyLogo.png'
+import SunshopyLogowithTitle from '../../../../../public/assets/images/SunShopyPng.png'
 import { Footer, Media } from '../../../../payload/payload-types'
 import { inclusions, noHeaderFooterUrls, profileNavItems } from '../../../constants'
 import { Button } from '../../Button'
@@ -29,8 +30,9 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                 height={36}
                 className={classes.icon}
               />
+              
 
-              <h5 className={classes.title}>{inclusion.title}</h5>
+              <h6 className={classes.Heading}>{inclusion.title}</h6>
               <p>{inclusion.description}</p>
             </li>
           ))}
@@ -41,7 +43,8 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
         <Gutter>
           <div className={classes.wrap}>
             <Link href="/">
-              <Image src="/logo-white.svg" alt="logo" width={170} height={50} />
+            <Image src={SunshopyLogowithTitle.src} className={classes.LaptopView} alt="Logo" width={180} height={120} />
+            <Image src={SunshopyLogo.src} className={classes.Mobileview} alt="Logo" width={80} height={90} />
             </Link>
 
             <p>{footer?.copyright}</p>
