@@ -75,6 +75,7 @@ export const Blocks: React.FC<{
                       {...block}
                     />
                   </VerticalPadding>
+             
                 </BackgroundColor>
               )
             }
