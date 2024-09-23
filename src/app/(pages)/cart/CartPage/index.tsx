@@ -56,7 +56,7 @@ export const CartPage: React.FC<{
             </div>
           ) : (
             <div className={classes.cartWrapper}>
-              <div>
+              <div >
                 {/* CART LIST HEADER */}
                 <div className={classes.header}>
                   <p>Products</p>
