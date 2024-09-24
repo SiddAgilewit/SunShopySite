@@ -1,5 +1,6 @@
 @use '../../_css/common.scss' as *;
 
+<<<<<<< HEAD
 .container {
   margin-top: 50px;
   width: 100%;
@@ -8,3 +9,8 @@
     margin-top: 30px;
   }
 }
+=======
+.message {
+  margin-bottom: calc(var(--base) * 1.5);
+}
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1

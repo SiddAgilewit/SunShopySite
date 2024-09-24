@@ -13,7 +13,10 @@ import { useAuth } from '../../../_providers/Auth'
 import classes from './index.module.scss'
 
 type FormData = {
+<<<<<<< HEAD
   name: string
+=======
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   email: string
   password: string
   passwordConfirm: string
@@ -63,8 +66,12 @@ const CreateAccountForm: React.FC = () => {
         await login(data)
         clearTimeout(timer)
         if (redirect) router.push(redirect as string)
+<<<<<<< HEAD
         else router.push(`/`)
         window.location.href = '/'
+=======
+        else router.push(`/account?success=${encodeURIComponent('Account created successfully')}`)
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
       } catch (_) {
         clearTimeout(timer)
         setError('There was an error with the credentials provided. Please try again.')
@@ -90,6 +97,7 @@ const CreateAccountForm: React.FC = () => {
         type="email"
       />
       <Input
+<<<<<<< HEAD
         name="name"
         label="Full name"
         required
@@ -98,6 +106,8 @@ const CreateAccountForm: React.FC = () => {
         type="text"
       />
       <Input
+=======
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
         name="password"
         type="password"
         label="Password"
@@ -116,7 +126,11 @@ const CreateAccountForm: React.FC = () => {
       />
       <Button
         type="submit"
+<<<<<<< HEAD
         label={loading ? 'Processing' : 'Sign up'}
+=======
+        label={loading ? 'Processing' : 'Create Account'}
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
         disabled={loading}
         appearance="primary"
         className={classes.submit}

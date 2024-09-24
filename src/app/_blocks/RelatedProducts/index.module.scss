@@ -1,10 +1,13 @@
 @import '../../_css/common';
 
+<<<<<<< HEAD
 .relatedProducts {
   width: 100%;
   padding-top: var(--base);
 }
 
+=======
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 .introContent {
   position: relative;
   margin-bottom: calc(var(--base) * 2);
@@ -16,6 +19,7 @@
 
 .grid {
   display: grid;
+<<<<<<< HEAD
   padding: 0;
   grid-template-columns: repeat(3, minmax(30%, 1fr));
   gap: 30px;
@@ -32,4 +36,50 @@
 .title {
   font-weight: 400;
   margin-bottom: 30px;
+=======
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+  gap: var(--base) 40px;
+
+  @include mid-break {
+    grid-template-columns: repeat(6, 1fr);
+    gap: calc(var(--base) / 2) var(--base);
+  }
+}
+
+.column {
+  grid-column-end: span 12;
+
+  @include mid-break {
+    grid-column-end: span 6;
+  }
+
+  @include small-break {
+    grid-column-end: span 6;
+  }
+}
+
+.cols-half {
+  grid-column-end: span 6;
+
+  @include mid-break {
+    grid-column-end: span 6;
+  }
+
+  @include small-break {
+    grid-column-end: span 6;
+  }
+}
+
+.cols-thirds {
+  grid-column-end: span 3;
+
+  @include mid-break {
+    grid-column-end: span 6;
+  }
+
+  @include small-break {
+    grid-column-end: span 6;
+  }
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }

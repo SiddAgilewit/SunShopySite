@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../_css/common';
 
 .container {
@@ -38,4 +39,30 @@
 
 .personalInfo {
   margin-bottom: 30px;
+=======
+.account {
+  margin-bottom: var(--block-padding);
+}
+
+.params {
+  margin-top: var(--base);
+}
+
+.purchases {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--base);
+}
+
+.purchase {
+  > * {
+    margin: 0;
+  }
+}
+
+.noPurchases {
+  font-weight: 600;
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../../_css/common';
 
 .form {
@@ -29,13 +30,35 @@
 
 .submit {
   width: 100%;
+=======
+@import "../../../_css/common";
+
+.error {
+  color: red;
+  margin-bottom: 15px;
+}
+
+.formWrapper {
+  width: 66.66%;
+
+  @include mid-break {
+    width: 100%;
+  }
+}
+
+.submit {
+  margin-top: var(--base);
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }
 
 .message {
   margin-bottom: var(--base);
 }
 
+<<<<<<< HEAD
 .error {
   color: red;
   margin-bottom: 15px;
 }
+=======
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1

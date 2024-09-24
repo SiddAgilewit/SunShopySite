@@ -29,7 +29,11 @@ export const populateArchiveBlock: AfterReadHook = async ({ doc, context, req: {
                     categories: {
                       in: archiveBlock?.categories
                         ?.map(cat => {
+<<<<<<< HEAD
                           if (typeof cat === 'string') return cat
+=======
+                          if (typeof cat === 'string' || typeof cat === 'number') return cat
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
                           return cat.id
                         })
                         .join(','),

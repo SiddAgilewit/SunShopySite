@@ -1,10 +1,15 @@
 import React from 'react'
 import { Metadata } from 'next'
+<<<<<<< HEAD
 import Image from 'next/image'
 import Link from 'next/link'
 
 import { Gutter } from '../../_components/Gutter'
 import { RenderParams } from '../../_components/RenderParams'
+=======
+
+import { Gutter } from '../../_components/Gutter'
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 import { RecoverPasswordForm } from './RecoverPasswordForm'
 
@@ -12,6 +17,7 @@ import classes from './index.module.scss'
 
 export default async function RecoverPassword() {
   return (
+<<<<<<< HEAD
     <section className={classes.recoverPassword}>
       <div className={classes.heroImg}>
         <Link href="/">
@@ -40,6 +46,11 @@ export default async function RecoverPassword() {
         </div>
       </div>
     </section>
+=======
+    <Gutter className={classes.recoverPassword}>
+      <RecoverPasswordForm />
+    </Gutter>
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   )
 }
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 export const PRODUCT_CATEGORIES = `categories {
+=======
+export const CATEGORIES = `categories {
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   title
   id
   breadcrumbs {
@@ -6,6 +10,7 @@ export const PRODUCT_CATEGORIES = `categories {
     label
   }
 }`
+<<<<<<< HEAD
 
 export const CATEGORIES = `
   query Categories {
@@ -23,3 +28,5 @@ export const CATEGORIES = `
     }
   }
 `
+=======
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1

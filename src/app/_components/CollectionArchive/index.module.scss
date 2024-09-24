@@ -6,7 +6,11 @@
   left: 0;
   top: calc(var(--base) * -5);
   @include mid-break {
+<<<<<<< HEAD
     top: calc(var(--base) * -2);
+=======
+    top:  calc(var(--base) * -2);
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   }
 }
 
@@ -36,6 +40,7 @@
   }
 }
 
+<<<<<<< HEAD
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(30%, 1fr));
@@ -49,13 +54,43 @@
 
   @include small-break {
     grid-template-columns: 100%;
+=======
+.list {
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+  gap: var(--base) 40px;
+
+  @include mid-break {
+    grid-template-columns: repeat(6, 1fr);
+    gap: calc(var(--base) / 2) var(--base);
+  }
+}
+
+.column {
+  grid-column-end: span 4;
+
+  @include mid-break {
+    grid-column-end: span 6;
+  }
+
+  @include small-break {
+    grid-column-end: span 6;
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   }
 }
 
 .pagination {
   margin-top: calc(var(--base) * 2);
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
+=======
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
   @include mid-break {
     margin-top: var(--base);

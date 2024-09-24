@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../_css/common';
 
 .login {
@@ -91,8 +92,18 @@
   @include small-break {
     padding: 30px;
   }
+=======
+@import "../../_css/common";
+
+.login {
+  margin-bottom: var(--block-padding);
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }
 
 .params {
   margin-top: var(--base);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1

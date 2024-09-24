@@ -1,7 +1,10 @@
 import React from 'react'
 import { Metadata } from 'next'
+<<<<<<< HEAD
 import Image from 'next/image'
 import Link from 'next/link'
+=======
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
 import { Gutter } from '../../_components/Gutter'
 import { RenderParams } from '../../_components/RenderParams'
@@ -19,6 +22,7 @@ export default async function CreateAccount() {
   })
 
   return (
+<<<<<<< HEAD
     <section className={classes.createAccount}>
       <div className={classes.heroImg}>
         <Link href="/">
@@ -47,6 +51,13 @@ export default async function CreateAccount() {
         </div>
       </div>
     </section>
+=======
+    <Gutter className={classes.createAccount}>
+      <h1>Create Account</h1>
+      <RenderParams />
+      <CreateAccountForm />
+    </Gutter>
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   )
 }
 

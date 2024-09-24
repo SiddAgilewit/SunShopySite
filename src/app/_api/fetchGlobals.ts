@@ -3,7 +3,11 @@ import { FOOTER_QUERY, HEADER_QUERY, SETTINGS_QUERY } from '../_graphql/globals'
 import { GRAPHQL_API_URL } from './shared'
 
 export async function fetchSettings(): Promise<Settings> {
+<<<<<<< HEAD
   if (!GRAPHQL_API_URL) throw new Error('NEXT_PUBLIC_SERVER_URL not found')
+=======
+  if (!process.env.NEXT_PUBLIC_SERVER_URL) throw new Error('NEXT_PUBLIC_SERVER_URL not found')
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
   const settings = await fetch(`${GRAPHQL_API_URL}/api/graphql`, {
     method: 'POST',

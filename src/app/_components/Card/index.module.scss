@@ -1,6 +1,11 @@
 @import '../../_css/common';
 
+<<<<<<< HEAD
 .card {
+=======
+.card  {
+  border: 1px var(--theme-elevation-200) solid;
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   border-radius: 4px;
   height: 100%;
   display: flex;
@@ -8,12 +13,20 @@
 }
 
 .content {
+<<<<<<< HEAD
   padding: 8px 0;
   display: flex;
   flex-direction: column;
   gap: 4px;
   background-color: white;
   width: 100%;
+=======
+  padding: var(--base);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--base) / 2);
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
   @include small-break {
     padding: calc(var(--base) / 2);
@@ -23,12 +36,19 @@
 
 .title {
   margin: 0;
+<<<<<<< HEAD
   font-size: 20px;
   font-weight: 700;
 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+=======
+}
+
+.titleLink {
+  text-decoration: none;
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }
 
 .centerAlign {
@@ -56,11 +76,14 @@
 
 .description {
   margin: 0;
+<<<<<<< HEAD
   line-height: 24px;
 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+=======
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }
 
 .hideImageOnMobile {
@@ -73,6 +96,7 @@
   text-decoration: none;
   display: block;
   position: relative;
+<<<<<<< HEAD
   min-height: 262px;
   background-color: var(--color-dark-50);
 }
@@ -82,6 +106,13 @@
   object-fit: contain;
   aspect-ratio: 1/1;
   max-width: 100%;
+=======
+  aspect-ratio: 16 / 9;
+}
+
+.image {
+  object-fit: cover;
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }
 
 .placeholder {

@@ -16,7 +16,10 @@ export type Props = {
   type?: 'submit' | 'button'
   disabled?: boolean
   invert?: boolean
+<<<<<<< HEAD
   children?: React.ReactNode
+=======
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }
 
 export const Button: React.FC<Props> = ({
@@ -30,7 +33,10 @@ export const Button: React.FC<Props> = ({
   type = 'button',
   disabled,
   invert,
+<<<<<<< HEAD
   children,
+=======
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }) => {
   let el = elFromProps
 
@@ -48,7 +54,10 @@ export const Button: React.FC<Props> = ({
   const content = (
     <div className={classes.content}>
       <span className={classes.label}>{label}</span>
+<<<<<<< HEAD
       {children}
+=======
+>>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
     </div>
   )
 
