@@ -7,81 +7,52 @@
 %h5,
 %h6 {
   font-weight: 700;
-<<<<<<< HEAD
-  margin: 0;
-}
-
-%h1 {
-=======
 }
 
 %h1 {
   margin: 40px 0;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   font-size: 64px;
   line-height: 70px;
   font-weight: bold;
 
   @include mid-break {
-<<<<<<< HEAD
-=======
     margin: 24px 0;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
     font-size: 42px;
     line-height: 42px;
   }
 }
 
 %h2 {
-<<<<<<< HEAD
-=======
   margin: 28px 0;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   font-size: 48px;
   line-height: 54px;
   font-weight: bold;
 
   @include mid-break {
-<<<<<<< HEAD
-=======
     margin: 22px 0;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
     font-size: 32px;
     line-height: 40px;
   }
 }
 
 %h3 {
-<<<<<<< HEAD
-=======
   margin: 24px 0;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   font-size: 32px;
   line-height: 40px;
   font-weight: bold;
 
   @include mid-break {
-<<<<<<< HEAD
-=======
     margin: 20px 0;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
     font-size: 26px;
     line-height: 32px;
   }
 }
 
 %h4 {
-<<<<<<< HEAD
-  font-size: 30px;
-  line-height: 43px;
-  font-weight: 400;
-  letter-spacing: 0em;
-=======
   margin: 20px 0;
   font-size: 26px;
   line-height: 32px;
   font-weight: bold;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
   @include mid-break {
     font-size: 22px;
@@ -90,10 +61,7 @@
 }
 
 %h5 {
-<<<<<<< HEAD
-=======
   margin: 20px 0;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   font-size: 22px;
   line-height: 30px;
   font-weight: bold;
@@ -105,10 +73,7 @@
 }
 
 %h6 {
-<<<<<<< HEAD
-=======
   margin: 20px 0;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   font-size: inherit;
   line-height: inherit;
   font-weight: bold;

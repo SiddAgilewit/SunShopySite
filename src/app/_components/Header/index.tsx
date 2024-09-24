@@ -7,14 +7,10 @@ import Link from 'next/link'
 
 import { Header } from '../../../payload/payload-types'
 import { fetchHeader } from '../../_api/fetchGlobals'
-<<<<<<< HEAD
-import HeaderComponent from './HeaderComponent'
-=======
 import { Gutter } from '../Gutter'
 import { HeaderNav } from './Nav'
 
 import classes from './index.module.scss'
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
 export async function Header() {
   let header: Header | null = null
@@ -22,21 +18,14 @@ export async function Header() {
   try {
     header = await fetchHeader()
   } catch (error) {
-<<<<<<< HEAD
-    console.log(error)
-=======
     // When deploying this template on Payload Cloud, this page needs to build before the APIs are live
     // So swallow the error here and simply render the header without nav items if one occurs
     // in production you may want to redirect to a 404  page or at least log the error somewhere
     // console.error(error)
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   }
 
   return (
     <>
-<<<<<<< HEAD
-      <HeaderComponent header={header} />
-=======
       <header className={classes.header}>
         <Gutter className={classes.wrap}>
           <Link href="/">
@@ -54,7 +43,6 @@ export async function Header() {
           <HeaderNav header={header} />
         </Gutter>
       </header>
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
     </>
   )
 }

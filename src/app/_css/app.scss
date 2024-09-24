@@ -5,17 +5,6 @@
 
 :root {
   --base: 24px;
-<<<<<<< HEAD
-  --font-body: 'Georgia', serif; 
-  --font-jost: 'Jost', sans-serif; 
-
-  --gutter-h: 90px;
-  --block-padding: 80px; // Reduced block padding for desktop
-
-  @include large-break {
-    --gutter-h: 94px;
-    --block-padding: 60px; // Further reduce for larger screens
-=======
   --font-body: system-ui;
   --font-mono: 'Roboto Mono', monospace;
 
@@ -25,16 +14,11 @@
   @include large-break {
     --gutter-h: 144px;
     --block-padding: 96px;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   }
 
   @include mid-break {
     --gutter-h: 24px;
-<<<<<<< HEAD
-    --block-padding: 40px; // Adjust for mid-sized screens
-=======
     --block-padding: 60px;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   }
 }
 
@@ -43,22 +27,13 @@
 }
 
 html {
-<<<<<<< HEAD
-  @extend %body; 
-=======
   @extend %body;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   background: var(--theme-bg);
   -webkit-font-smoothing: antialiased;
   opacity: 0;
 
-<<<<<<< HEAD
-  &[data-theme='dark'],
-  &[data-theme='light'] {
-=======
   &[data-theme=dark],
   &[data-theme=light] {
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
     opacity: initial;
   }
 }
@@ -70,25 +45,6 @@ body,
 }
 
 body {
-<<<<<<< HEAD
-  font-family: var(--font-body); // Use Georgia for body font
-  margin: 0;
-  padding: 0;
-  color: var(--color-dark-500);
-
-  display: flex;
-  flex-flow: column;
-}
-
-.main {
-  flex: 1 1 auto;
-  background-color: rgba(141, 246, 246, 0.895);
-  padding: var(--block-padding); // Apply adjusted padding
-}
-
-::selection {
-  background: var(--color-dark-500);
-=======
   font-family: var(--font-body);
   margin: 0;
   color: var(--theme-text);
@@ -96,16 +52,12 @@ body {
 
 ::selection {
   background: var(--theme-success-500);
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
+
   color: var(--color-base-800);
 }
 
 ::-moz-selection {
-<<<<<<< HEAD
-  background: var(--color-dark-50);
-=======
   background: var(--theme-success-500);
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   color: var(--color-base-800);
 }
 
@@ -115,20 +67,6 @@ img {
   display: block;
 }
 
-<<<<<<< HEAD
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-body); // Ensure headings use Georgia font
-  @extend %h1; // Ensure %h1 is defined in your imported files
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: large;
-  line-height: 1.2; 
-}
-
-p {
-  margin: 0;
-=======
 h1 {
   @extend %h1;
 }
@@ -159,24 +97,10 @@ p {
   @include mid-break {
     margin: calc(var(--base) * .75) 0;
   }
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }
 
 ul,
 ol {
-<<<<<<< HEAD
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-a {
-  color: var(--color-dark-500);
-  text-decoration: none;
-
-  &:focus {
-    opacity: 0.8;
-=======
   padding-left: var(--base);
   margin: 0 0 var(--base);
 }
@@ -186,24 +110,15 @@ a {
 
   &:focus {
     opacity: .8;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
     outline: none;
   }
 
   &:active {
-<<<<<<< HEAD
-    opacity: 0.7;
-=======
     opacity: .7;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
     outline: none;
   }
 }
 
 svg {
   vertical-align: middle;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1

@@ -1,13 +1,5 @@
 @import '../../_css/common';
 
-<<<<<<< HEAD
-.relatedProducts {
-  width: 100%;
-  padding-top: var(--base);
-}
-
-=======
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 .introContent {
   position: relative;
   margin-bottom: calc(var(--base) * 2);
@@ -19,24 +11,6 @@
 
 .grid {
   display: grid;
-<<<<<<< HEAD
-  padding: 0;
-  grid-template-columns: repeat(3, minmax(30%, 1fr));
-  gap: 30px;
-
-  @include mid-break {
-    gap: 20px;
-  }
-
-  @include small-break {
-    grid-template-columns: 100%;
-  }
-}
-
-.title {
-  font-weight: 400;
-  margin-bottom: 30px;
-=======
   grid-template-columns: repeat(12, 1fr);
   width: 100%;
   gap: var(--base) 40px;
@@ -81,5 +55,4 @@
   @include small-break {
     grid-column-end: span 6;
   }
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }

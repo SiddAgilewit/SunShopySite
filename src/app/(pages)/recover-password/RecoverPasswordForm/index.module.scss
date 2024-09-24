@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-@import '../../../_css/common';
-
-.form {
-  width: 100%;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  align-items: flex-start;
-}
-
-.subTitle {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.requestSuccess {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 30px;
-}
-
-.openMailBtn {
-  margin-top: 30px;
-  width: 100%;
-  display: flex;
-}
-
-.submit {
-  width: 100%;
-=======
 @import "../../../_css/common";
 
 .error {
@@ -48,17 +15,9 @@
 
 .submit {
   margin-top: var(--base);
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }
 
 .message {
   margin-bottom: var(--base);
 }
 
-<<<<<<< HEAD
-.error {
-  color: red;
-  margin-bottom: 15px;
-}
-=======
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1

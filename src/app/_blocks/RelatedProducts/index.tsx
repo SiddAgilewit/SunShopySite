@@ -16,19 +16,6 @@ export type RelatedProductsProps = {
 }
 
 export const RelatedProducts: React.FC<RelatedProductsProps> = props => {
-<<<<<<< HEAD
-  const { docs, relationTo } = props
-
-  return (
-    <div className={classes.relatedProducts}>
-      <Gutter>
-        <h3 className={classes.title}>Related Products</h3>
-        <div className={classes.grid}>
-          {docs?.map(doc => {
-            if (typeof doc === 'string') return null
-
-            return <Card key={doc.id} relationTo={relationTo} doc={doc} showCategories />
-=======
   const { introContent, docs, relationTo } = props
 
   return (
@@ -57,7 +44,6 @@ export const RelatedProducts: React.FC<RelatedProductsProps> = props => {
                 <Card relationTo={relationTo} doc={doc} showCategories />
               </div>
             )
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
           })}
         </div>
       </Gutter>

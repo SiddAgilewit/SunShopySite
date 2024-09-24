@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { PRODUCT_CATEGORIES } from './categories'
-=======
 import { CATEGORIES } from './categories'
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 import { LINK_FIELDS } from './link'
 import { MEDIA } from './media'
 import { META } from './meta'
@@ -46,11 +42,7 @@ export const ARCHIVE_BLOCK = `
   introContent
   populateBy
   relationTo
-<<<<<<< HEAD
-  ${PRODUCT_CATEGORIES}
-=======
   ${CATEGORIES}
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   limit
   selectedDocs {
     relationTo
@@ -60,10 +52,7 @@ export const ARCHIVE_BLOCK = `
         slug
         title
         priceJSON
-<<<<<<< HEAD
-=======
         ${META}
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
       }
     }
   }
@@ -75,11 +64,7 @@ export const ARCHIVE_BLOCK = `
         slug
         title
         priceJSON
-<<<<<<< HEAD
-        ${PRODUCT_CATEGORIES}
-=======
         ${CATEGORIES}
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
         ${META}
       }
     }

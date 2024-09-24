@@ -9,11 +9,7 @@ export const revalidate = async (args: {
 
   try {
     const res = await fetch(
-<<<<<<< HEAD
-      `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/revalidate?secret=${process.env.REVALIDATION_KEY}&collection=${collection}&slug=${slug}`,
-=======
       `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/next/revalidate?secret=${process.env.REVALIDATION_KEY}&collection=${collection}&slug=${slug}`,
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
     )
 
     if (res.ok) {

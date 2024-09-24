@@ -20,10 +20,7 @@ export const ArchiveBlock: React.FC<
     limit,
     populatedDocs,
     populatedDocsTotal,
-<<<<<<< HEAD
-=======
     selectedDocs,
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
     categories,
   } = props
 
@@ -39,10 +36,7 @@ export const ArchiveBlock: React.FC<
         relationTo={relationTo}
         populatedDocs={populatedDocs}
         populatedDocsTotal={populatedDocsTotal}
-<<<<<<< HEAD
-=======
         selectedDocs={selectedDocs}
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
         categories={categories}
         limit={limit}
         sort="-publishedOn"

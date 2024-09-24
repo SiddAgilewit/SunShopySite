@@ -7,18 +7,6 @@
 .input {
   width: 100%;
   font-family: system-ui;
-<<<<<<< HEAD
-  border-radius: 10px;
-  box-shadow: none;
-  border: 1px solid var(--color-gray-500);
-  background: none;
-  background-color: var(--theme-elevation-100);
-  color: var(--theme-elevation-1000);
-  height: 52px;
-  line-height: calc(var(--base) * 2);
-  padding: 16px;
-  font-size: 16px;
-=======
   border-radius: 0;
   box-shadow: none;
   border: none;
@@ -29,7 +17,6 @@
   line-height: calc(var(--base) * 2);
   padding: 0 calc(var(--base) / 2);
   font-size: inherit;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
   &:focus {
     border: none;
@@ -64,10 +51,6 @@
   display: block;
   line-height: 1;
   margin-bottom: calc(var(--base) / 2);
-<<<<<<< HEAD
-  font-size: 12px;
-=======
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }
 
 .errorMessage {

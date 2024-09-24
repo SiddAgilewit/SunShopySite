@@ -1,13 +1,11 @@
+
 'use client'
 
 import React, { useEffect, useState } from 'react'
 
 import { Product } from '../../../payload/payload-types'
-<<<<<<< HEAD
-=======
 import { AddToCartButton } from '../AddToCartButton'
 import { RemoveFromCartButton } from '../RemoveFromCartButton'
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
 import classes from './index.module.scss'
 
@@ -69,10 +67,6 @@ export const Price: React.FC<{
       {typeof price?.actualPrice !== 'undefined' && price?.withQuantity !== '' && (
         <div className={classes.price}>
           <p>{price?.withQuantity}</p>
-<<<<<<< HEAD
-        </div>
-      )}
-=======
           {quantity > 1 && (
             <small className={classes.priceBreakdown}>{`${price.actualPrice} x ${quantity}`}</small>
           )}
@@ -82,7 +76,6 @@ export const Price: React.FC<{
         <AddToCartButton product={product} appearance="default" />
       )}
       {button && button === 'removeFromCart' && <RemoveFromCartButton product={product} />}
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
     </div>
   )
 }

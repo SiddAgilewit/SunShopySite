@@ -6,11 +6,7 @@
   left: 0;
   top: calc(var(--base) * -5);
   @include mid-break {
-<<<<<<< HEAD
-    top: calc(var(--base) * -2);
-=======
     top:  calc(var(--base) * -2);
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   }
 }
 
@@ -40,21 +36,6 @@
   }
 }
 
-<<<<<<< HEAD
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(30%, 1fr));
-  gap: 30px;
-  padding: 0;
-  width: 100%;
-
-  @include mid-break {
-    gap: 20px;
-  }
-
-  @include small-break {
-    grid-template-columns: 100%;
-=======
 .list {
   position: relative;
 }
@@ -80,17 +61,11 @@
 
   @include small-break {
     grid-column-end: span 6;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   }
 }
 
 .pagination {
   margin-top: calc(var(--base) * 2);
-<<<<<<< HEAD
-  display: flex;
-  justify-content: center;
-=======
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
   @include mid-break {
     margin-top: var(--base);

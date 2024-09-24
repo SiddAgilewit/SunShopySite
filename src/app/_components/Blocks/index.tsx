@@ -21,14 +21,8 @@ const blockComponents = {
 export const Blocks: React.FC<{
   blocks: (Page['layout'][0] | RelatedProductsProps)[]
   disableTopPadding?: boolean
-<<<<<<< HEAD
-  disableBottomPadding?: boolean
-}> = props => {
-  const { disableTopPadding, disableBottomPadding, blocks } = props
-=======
 }> = props => {
   const { disableTopPadding, blocks } = props
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
   const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0
 
@@ -66,13 +60,6 @@ export const Blocks: React.FC<{
               paddingTop = 'none'
             }
 
-<<<<<<< HEAD
-            if (disableBottomPadding && index === 0) {
-              paddingBottom = 'none'
-            }
-
-=======
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
             if (Block) {
               return (
                 <BackgroundColor key={index} invert={blockIsInverted}>

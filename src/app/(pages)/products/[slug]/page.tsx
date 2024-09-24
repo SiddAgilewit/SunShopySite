@@ -34,20 +34,12 @@ export default async function Product({ params: { slug } }) {
     notFound()
   }
 
-<<<<<<< HEAD
-  const { relatedProducts } = product
-
-  return (
-    <>
-      <ProductHero product={product} />
-=======
   const { layout, relatedProducts } = product
 
   return (
     <React.Fragment>
       <ProductHero product={product} />
       <Blocks blocks={layout} />
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
       {product?.enablePaywall && <PaywallBlocks productSlug={slug as string} disableTopPadding />}
       <Blocks
         disableTopPadding
@@ -58,19 +50,13 @@ export default async function Product({ params: { slug } }) {
             relationTo: 'products',
             introContent: [
               {
-<<<<<<< HEAD
-                type: 'h3',
-=======
                 type: 'h4',
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
                 children: [
                   {
                     text: 'Related Products',
                   },
                 ],
               },
-<<<<<<< HEAD
-=======
               {
                 type: 'p',
                 children: [
@@ -91,17 +77,12 @@ export default async function Product({ params: { slug } }) {
                   },
                 ],
               },
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
             ],
             docs: relatedProducts,
           },
         ]}
       />
-<<<<<<< HEAD
-    </>
-=======
     </React.Fragment>
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   )
 }
 
