@@ -3,10 +3,18 @@
 .item {
   display: grid;
   grid-template-columns: 100px 2fr 1fr;
-  padding: 20px ;
+  padding: 20px;
   border-radius: 6px;
   gap: 24px;
   border: 1px solid black;
+  margin-top: 10px;
+
+  @include small-break {
+    grid-template-columns: 2fr; // Stack items vertically on small screens
+    padding: 16px;
+    gap: 16px;
+ 
+  }
 }
 
 .mediaWrapper {
@@ -14,6 +22,11 @@
   min-height: 100px;
   padding: 16px;
   background-color: var(--color-dark-50);
+
+  @include small-break {
+    min-height: 80px;
+    padding: 8px; // Reduce padding for mobile
+  }
 }
 
 .media {
@@ -24,7 +37,7 @@
 .image {
   object-fit: contain;
   max-width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1; // Ensures square images
 }
 
 .itemDetails {
@@ -34,7 +47,8 @@
   align-items: center;
 
   @include small-break {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; // Stack item details vertically
+    gap: 8px;
   }
 }
 
@@ -42,10 +56,14 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  
+
   h6 {
     line-height: 20px;
     margin-bottom: 8px;
+
+    @include small-break {
+      font-size: 16px; // Reduce font size for mobile
+    }
   }
 }
 
@@ -56,8 +74,13 @@
   border-radius: 10px;
   align-items: center;
   height: 45px;
- 
   max-width: 120px;
+
+  @include small-break {
+    grid-template-columns: 30px 1fr 30px; 
+    max-width: 100px;
+    height: 40px;
+  }
 }
 
 .quantityBtn {
@@ -77,6 +100,10 @@
   outline: none;
   font-size: 16px;
   font-weight: 700;
+
+  @include small-break {
+    font-size: 14px; // Reduce font size for mobile input
+  }
 }
 
 .subtotalWrapper {
@@ -88,6 +115,7 @@
   @include small-break {
     flex-direction: column;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
+    gap: 20px; // Reduce gap for mobile
   }
 }

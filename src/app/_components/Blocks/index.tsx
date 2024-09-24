@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-
 import { Page } from '../../../payload/payload-types.js'
 import { ArchiveBlock } from '../../_blocks/ArchiveBlock'
 import { CallToActionBlock } from '../../_blocks/CallToAction'
@@ -69,7 +68,8 @@ export const Blocks: React.FC<{
               return (
                 <BackgroundColor key={index} invert={blockIsInverted}>
                   <VerticalPadding top={paddingTop} bottom={paddingBottom}>
-                    <Block
+                   
+                  <Block 
                       // @ts-expect-error
                       id={toKebabCase(blockName)}
                       {...block}
