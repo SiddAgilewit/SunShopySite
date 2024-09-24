@@ -1,48 +1,52 @@
-'use client'
+'use client';
 
-import React from 'react'
+import React from 'react';
+import { Category } from '../../../../payload/payload-types';
+import { Checkbox } from '../../../_components/Checkbox';
+import { HR } from '../../../_components/HR';
+import { RadioButton } from '../../../_components/Radio';
+import { useFilter } from '../../../_providers/Filter';
+import classes from './index.module.scss';
 
-import { Category } from '../../../../payload/payload-types'
-import { Checkbox } from '../../../_components/Checkbox'
-import { HR } from '../../../_components/HR'
-import { RadioButton } from '../../../_components/Radio'
-import { useFilter } from '../../../_providers/Filter'
-
-import classes from './index.module.scss'
-
-const Filters = ({ categories }: { categories: Category[] }) => {
-  const { categoryFilters, sort, setCategoryFilters, setSort } = useFilter()
+const Filters = ({ categories }: { categories: Category[] | null | undefined }) => {
+  const { categoryFilters, sort, setCategoryFilters, setSort } = useFilter();
 
   const handleCategories = (categoryId: string) => {
     if (categoryFilters.includes(categoryId)) {
-      const updatedCategories = categoryFilters.filter(id => id !== categoryId)
-
-      setCategoryFilters(updatedCategories)
+      const updatedCategories = categoryFilters.filter(id => id !== categoryId);
+      setCategoryFilters(updatedCategories);
     } else {
-      setCategoryFilters([...categoryFilters, categoryId])
+      setCategoryFilters([...categoryFilters, categoryId]);
     }
-  }
+  };
 
-  const handleSort = (value: string) => setSort(value)
+  const handleSort = (value: string) => setSort(value);
+
+  // Safely map over categories
+  const safeCategories = Array.isArray(categories) ? categories : [];
 
   return (
     <div className={classes.filters}>
       <div>
-        <h6 className={classes.title}>Categories</h6>
+        <h6 className={classes.title}>Product Categories</h6>
         <div className={classes.categories}>
-          {categories.map(category => {
-            const isSelected = categoryFilters.includes(category.id)
+          {safeCategories.length > 0 ? (
+            safeCategories.map(category => {
+              const isSelected = categoryFilters.includes(category.id);
 
-            return (
-              <Checkbox
-                key={category.id}
-                label={category.title}
-                value={category.id}
-                isSelected={isSelected}
-                onClickHandler={handleCategories}
-              />
-            )
-          })}
+              return (
+                <Checkbox
+                  key={category.id}
+                  label={category.title}
+                  value={category.id}
+                  isSelected={isSelected}
+                  onClickHandler={handleCategories}
+                />
+              );
+            })
+          ) : (
+            <p>No categories available</p>
+          )}
         </div>
         <HR className={classes.hr} />
         <h6 className={classes.title}>Sort By</h6>
@@ -64,7 +68,7 @@ const Filters = ({ categories }: { categories: Category[] }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Filters
+export default Filters;
