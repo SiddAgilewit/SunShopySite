@@ -116,6 +116,15 @@ const AccountForm: React.FC = () => {
             </button>
             {' to change your password.'}
           </p>
+          <Input
+            name="email"
+            label="Email Address"
+            required
+            register={register}
+            error={errors.email}
+            type="email"
+          />
+          <Input name="name" label="Name" register={register} error={errors.name} />
         </Fragment>
       ) : (
         <Fragment>

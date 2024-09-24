@@ -1,9 +1,13 @@
 import React from 'react'
 import { Metadata } from 'next'
+<<<<<<< HEAD
 import Image from 'next/image'
 import Link from 'next/link'
 import SunshopyLogo from '../../../../public/SunshopyLogo.png'
 import SunshopyLogowithTitle from '../../../../public/assets/images/SunShopyPng.png'
+=======
+
+>>>>>>> 46f9d1b1aff9e2c536aebffbdcf2cda401959a8e
 import { Gutter } from '../../_components/Gutter'
 import { RenderParams } from '../../_components/RenderParams'
 import { getMeUser } from '../../_utilities/getMeUser'
@@ -20,6 +24,7 @@ export default async function CreateAccount() {
   })
 
   return (
+<<<<<<< HEAD
     <section className={classes.createAccount}>
       <div >
         <Link href="/">
@@ -43,6 +48,13 @@ export default async function CreateAccount() {
         </div>
       </div>
     </section>
+=======
+    <Gutter className={classes.createAccount}>
+      <h1>Create Account</h1>
+      <RenderParams />
+      <CreateAccountForm />
+    </Gutter>
+>>>>>>> 46f9d1b1aff9e2c536aebffbdcf2cda401959a8e
   )
 }
 

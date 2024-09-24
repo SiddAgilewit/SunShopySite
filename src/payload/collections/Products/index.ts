@@ -1,3 +1,4 @@
+
 import type { CollectionConfig } from 'payload/types'
 
 import { admins } from '../../access/admins'
@@ -19,7 +20,7 @@ const Products: CollectionConfig = {
     useAsTitle: 'title',
     defaultColumns: ['title', 'stripeProductID', '_status'],
     preview: doc => {
-      return `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/preview?url=${encodeURIComponent(
+      return `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/next/preview?url=${encodeURIComponent(
         `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/products/${doc.slug}`,
       )}&secret=${process.env.PAYLOAD_PUBLIC_DRAFT_SECRET}`
     },
@@ -74,6 +75,7 @@ const Products: CollectionConfig = {
             {
               name: 'layout',
               type: 'blocks',
+              required: true,
               blocks: [CallToAction, Content, MediaBlock, Archive],
             },
           ],

@@ -26,6 +26,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={jost.variable}>
         <Providers>
+<<<<<<< HEAD
+=======
+         <p>Sidd</p>
+>>>>>>> 46f9d1b1aff9e2c536aebffbdcf2cda401959a8e
           {/* @ts-expect-error */}
           <Header />
           <main className="main">{children}</main>
