@@ -2,7 +2,8 @@ import React from 'react'
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import SunshopyLogo from '../../../../public/SunshopyLogo.png'
+import SunshopyLogowithTitle from '../../../../public/assets/images/SunShopyPng.png'
 import { Gutter } from '../../_components/Gutter'
 import { RenderParams } from '../../_components/RenderParams'
 import { getMeUser } from '../../_utilities/getMeUser'
@@ -20,15 +21,10 @@ export default async function CreateAccount() {
 
   return (
     <section className={classes.createAccount}>
-      <div className={classes.heroImg}>
+      <div >
         <Link href="/">
-          <Image
-            src="/logo-black.svg"
-            alt="logo"
-            width={250}
-            height={23}
-            className={classes.logo}
-          />
+        <Image src={SunshopyLogowithTitle.src} className={classes.LaptopView} alt="Logo" width={180} height={120} />
+        <Image src={SunshopyLogo.src} className={classes.Mobileview} alt="Logo" width={80} height={90} />
         </Link>
       </div>
 
