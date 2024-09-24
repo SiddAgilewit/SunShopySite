@@ -11,7 +11,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('/assets/images/image-2.svg');
+ 
   }
 
   p {
@@ -45,7 +45,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('/assets/images/image-2.svg');
+
 
   @include mid-break {
     background: none;
@@ -100,4 +100,15 @@
 
 .params {
   margin-top: var(--base);
+}
+.LaptopView{
+  display: none;
+}
+@media  screen  and (min-width:767px) {
+  .Mobileview{
+    display: none;
+  }
+  .LaptopView{
+    display: flex;
+  }
 }
