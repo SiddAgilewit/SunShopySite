@@ -20,7 +20,7 @@ const HeaderComponent=({header}:{header:Header})=>{
           <Image src={SunshopyLogowithTitle.src} className={classes.LaptopView} alt="Logo" width={180} height={120} />
           <Image src={SunshopyLogo.src} className={classes.Mobileview} alt="Logo" width={80} height={90} />
             </Link>
-<p>Sidd</p>
+<p>Siddu</p>
             <HeaderNav header={header}/>
             
         </Gutter>
