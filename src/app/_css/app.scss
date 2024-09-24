@@ -5,13 +5,8 @@
 
 :root {
   --base: 24px;
-<<<<<<< HEAD
-  --font-body: 'Georgia', serif; 
-  --font-jost: 'Jost', sans-serif; 
-=======
   --font-body: system-ui;
   --font-mono: 'Roboto Mono', monospace;
->>>>>>> 46f9d1b1aff9e2c536aebffbdcf2cda401959a8e
 
   --gutter-h: 90px;
   --block-padding: 80px; // Reduced block padding for desktop
@@ -50,25 +45,9 @@ body,
 }
 
 body {
-<<<<<<< HEAD
-  font-family: var(--font-body); // Use Georgia for body font
-  margin: 0;
-  padding: 0;
-  color: var(--color-dark-500);
-
-  display: flex;
-  flex-flow: column;
-}
-
-.main {
-  flex: 1 1 auto;
-  background-color: rgba(141, 246, 246, 0.895);
-  padding: var(--block-padding); // Apply adjusted padding
-=======
   font-family: var(--font-body);
   margin: 0;
   color: var(--theme-text);
->>>>>>> 46f9d1b1aff9e2c536aebffbdcf2cda401959a8e
 }
 
 ::selection {

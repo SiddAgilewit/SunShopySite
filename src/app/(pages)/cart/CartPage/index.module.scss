@@ -1,70 +1,12 @@
 @import '../../../_css/common';
 
-<<<<<<< HEAD
-.cart {
-  margin: 30px 0;
-}
-
-.cartWrapper {
-  display: grid;
-  grid-template-columns: 65% 1fr;
-  gap: 60px;
-
-  @include large-break {
-    grid-template-columns: 1fr;
-  
-  }
-  @include small-break {
-    width: 300px;
-  
-   }
-}
-
-.header {
-  display: grid;
-  grid-template-columns: 100px 2fr 1fr;
-  gap: 24px;
-  margin-bottom: 8px;
-
-  @include small-break {
-    display: none;
-  }
-}
-
-.headerItemDetails {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-}
-
-.headersubtotal {
-  text-align: end;
-}
-
-
-
-.summary {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 30px 24px;
-  border: 1px solid black;
-  border-radius: 6px;
-  @include small-break {
-   width: 300px;
-  }
-=======
 .empty {
   font-weight: 600;
->>>>>>> 46f9d1b1aff9e2c536aebffbdcf2cda401959a8e
 }
 
 .row {
   display: flex;
   align-items: center;
-<<<<<<< HEAD
-  padding-bottom: 16px;
-  border-bottom: 1px solid black;
-=======
   gap: var(--base);
 
   @include small-break {
@@ -167,5 +109,4 @@
 
 .checkoutButton {
   margin-top: var(--base);
->>>>>>> 46f9d1b1aff9e2c536aebffbdcf2cda401959a8e
 }

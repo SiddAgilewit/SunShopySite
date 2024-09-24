@@ -86,25 +86,6 @@ export const CartPage: React.FC<{
 
                   const isLast = index === (cart?.items?.length || 0) - 1
 
-<<<<<<< HEAD
-                <div className={classes.row}>
-                  <p className={classes.cartTotal}>Delivery Charge</p>
-                  <p className={classes.cartTotal}>${deliveryCharge}</p>
-                </div>
-
-                <div className={classes.row}>
-                  <p className={classes.cartTotal}>Grand Total</p>
-                  <p className={classes.cartTotal}>${grandTotal.toFixed(2)}</p>
-                </div>
-
-                <Button
-                  className={classes.checkoutButton}
-                  href={user ? '/checkout' : '/login?redirect=%2Fcheckout'}
-                  label={user ? 'Checkout' : 'Login to checkout'}
-                  appearance="primary"
-                />
-              </div>
-=======
                   const metaImage = meta?.image
 
                   return (
@@ -176,7 +157,6 @@ export const CartPage: React.FC<{
                 label={user ? 'Checkout' : 'Login to checkout'}
                 appearance="primary"
               />
->>>>>>> 46f9d1b1aff9e2c536aebffbdcf2cda401959a8e
             </div>
           )}
         </Fragment>

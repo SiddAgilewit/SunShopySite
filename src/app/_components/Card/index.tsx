@@ -75,10 +75,6 @@ export const Card: React.FC<{
         )}
       </Link>
       <div className={classes.content}>
-<<<<<<< HEAD
-       
-        {titleToUse && <h4 className={classes.title}>{titleToUse}</h4>}
-=======
         {showCategories && hasCategories && (
           <div className={classes.leader}>
             {showCategories && hasCategories && (
@@ -112,7 +108,6 @@ export const Card: React.FC<{
             </Link>
           </h4>
         )}
->>>>>>> 46f9d1b1aff9e2c536aebffbdcf2cda401959a8e
         {description && (
           <div className={classes.body}>
             {description && <p className={classes.description}>{sanitizedDescription}</p>}

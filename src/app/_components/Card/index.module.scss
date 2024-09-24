@@ -10,21 +10,11 @@
 }
 
 .content {
-<<<<<<< HEAD
-
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  background-color: white;
-  padding: 20px;
-  width: 100%;
-=======
   padding: var(--base);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: calc(var(--base) / 2);
->>>>>>> 46f9d1b1aff9e2c536aebffbdcf2cda401959a8e
 
   @include small-break {
     padding: calc(var(--base) / 2);

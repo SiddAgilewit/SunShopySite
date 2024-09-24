@@ -1,13 +1,5 @@
 import React from 'react'
 import { Metadata } from 'next'
-<<<<<<< HEAD
-import Image from 'next/image'
-import Link from 'next/link'
-import SunshopyLogo from '../../../../public/assets/images/SunshopyLogo.png'
-import SunshopyLogowithTitle from '../../../../public/assets/images/SunShopyPng.png'
-=======
-
->>>>>>> 46f9d1b1aff9e2c536aebffbdcf2cda401959a8e
 import { Gutter } from '../../_components/Gutter'
 import { RenderParams } from '../../_components/RenderParams'
 import { getMeUser } from '../../_utilities/getMeUser'
@@ -22,37 +14,11 @@ export default async function Login() {
   })
 
   return (
-<<<<<<< HEAD
-    <section className={classes.login}>
-      <div className={classes.heroImg}>
-        <Link href="/">
-           <Image src={SunshopyLogowithTitle.src} className={classes.LaptopView} alt="Logo" width={180} height={120} />
-           <Image src={SunshopyLogo.src} className={classes.Mobileview} alt="Logo" width={80} height={90} />
-        </Link>
-      </div>
-
-      <div className={classes.formWrapper}>
-        <div className={classes.formContainer}>
-          <RenderParams className={classes.params} />
-
-          <div className={classes.formTitle}>
-            <h3>Welcome</h3>
-            <Image src="/assets/icons/hand.png" alt="hand" width={30} height={30} />
-          </div>
-
-          <p>Please login here</p>
-
-          <LoginForm />
-        </div>
-      </div>
-    </section>
-=======
     <Gutter className={classes.login}>
       <RenderParams className={classes.params} />
       <h1>Log in</h1>
       <LoginForm />
     </Gutter>
->>>>>>> 46f9d1b1aff9e2c536aebffbdcf2cda401959a8e
   )
 }
 
