@@ -1,3 +1,8 @@
+
+
+
+
+
 'use client'
 
 import React, { useCallback, useRef } from 'react'
@@ -36,12 +41,7 @@ const LoginForm: React.FC = () => {
       try {
         await login(data)
         if (redirect?.current) router.push(redirect.current as string)
-<<<<<<< HEAD
-        else router.push('/')
-        window.location.href = '/'
-=======
         else router.push('/account')
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
       } catch (_) {
         setError('There was an error with the credentials provided. Please try again.')
       }
@@ -51,14 +51,11 @@ const LoginForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
-<<<<<<< HEAD
-=======
       <p>
         {`This is where your customers will login to manage their account, review their order history, and more. To manage all users, `}
         <Link href="/admin/collections/users">login to the admin dashboard</Link>
         {'.'}
       </p>
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
       <Message error={error} className={classes.message} />
       <Input
         name="email"
@@ -83,11 +80,7 @@ const LoginForm: React.FC = () => {
         disabled={isLoading}
         className={classes.submit}
       />
-<<<<<<< HEAD
-      <div className={classes.links}>
-=======
       <div>
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
         <Link href={`/create-account${allParams}`}>Create an account</Link>
         <br />
         <Link href={`/recover-password${allParams}`}>Recover your password</Link>

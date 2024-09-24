@@ -34,8 +34,6 @@ export const useCart = () => useContext(Context)
 
 const arrayHasItems = array => Array.isArray(array) && array.length > 0
 
-<<<<<<< HEAD
-=======
 /**
  * ensure that cart items are fully populated, filter out any items that are not
  * this will prevent discontinued products from appearing in the cart
@@ -58,7 +56,6 @@ const flattenCart = (cart: User['cart']): User['cart'] => ({
     .filter(Boolean) as CartItem[],
 })
 
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 // Step 1: Check local storage for a cart
 // Step 2: If there is a cart, fetch the products and hydrate the cart
 // Step 3: Authenticate the user
@@ -71,13 +68,7 @@ export const CartProvider = props => {
   const { children } = props
   const { user, status: authStatus } = useAuth()
 
-<<<<<<< HEAD
-  const [cart, dispatchCart] = useReducer(cartReducer, {
-    items: [],
-  })
-=======
   const [cart, dispatchCart] = useReducer(cartReducer, {})
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
   const [total, setTotal] = useState<{
     formatted: string
@@ -93,11 +84,8 @@ export const CartProvider = props => {
   // Check local storage for a cart
   // If there is a cart, fetch the products and hydrate the cart
   useEffect(() => {
-<<<<<<< HEAD
-=======
     // wait for the user to be defined before initializing the cart
     if (user === undefined) return
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
     if (!hasInitialized.current) {
       hasInitialized.current = true
 
@@ -138,11 +126,7 @@ export const CartProvider = props => {
 
       syncCartFromLocalStorage()
     }
-<<<<<<< HEAD
-  }, [])
-=======
   }, [user])
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
   // authenticate the user and if logged in, merge the user's cart with local state
   // only do this after we have initialized the cart to ensure we don't lose any items
@@ -169,31 +153,6 @@ export const CartProvider = props => {
   // upon logging in, merge and sync the existing local cart to Payload
   useEffect(() => {
     // wait until we have attempted authentication (the user is either an object or `null`)
-<<<<<<< HEAD
-    if (!hasInitialized.current || user === undefined) return
-
-    // ensure that cart items are fully populated, filter out any items that are not
-    // this will prevent discontinued products from appearing in the cart
-    const flattenedCart = {
-      ...cart,
-      items: cart?.items
-        ?.map(item => {
-          if (!item?.product || typeof item?.product !== 'object') {
-            return null
-          }
-
-          return {
-            ...item,
-            // flatten relationship to product
-            product: item?.product?.id,
-            quantity: typeof item?.quantity === 'number' ? item?.quantity : 0,
-          }
-        })
-        .filter(Boolean) as CartItem[],
-    }
-
-    if (user) {
-=======
     if (!hasInitialized.current || user === undefined || !cart.items) return
 
     const flattenedCart = flattenCart(cart)
@@ -205,7 +164,6 @@ export const CartProvider = props => {
         return
       }
 
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
       try {
         const syncCartToPayload = async () => {
           const req = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/${user.id}`, {

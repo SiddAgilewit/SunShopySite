@@ -57,15 +57,6 @@ export default async function Cart() {
   }
 
   return (
-<<<<<<< HEAD
-    <div className={classes.container}>
-      <Gutter>
-        <h3>Cart</h3>
-        <CartPage settings={settings} page={page} />
-      </Gutter>
-      <Blocks blocks={page?.layout} disableBottomPadding />
-    </div>
-=======
     <Fragment>
       {!process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY && (
         <Gutter>
@@ -101,7 +92,6 @@ export default async function Cart() {
       </Gutter>
       <Blocks blocks={page?.layout} />
     </Fragment>
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   )
 }
 

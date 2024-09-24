@@ -12,10 +12,6 @@ import { Price } from '../../../_components/Price'
 import { RemoveFromCartButton } from '../../../_components/RemoveFromCartButton'
 import { useAuth } from '../../../_providers/Auth'
 import { useCart } from '../../../_providers/Cart'
-<<<<<<< HEAD
-import CartItem from '../CartItem'
-=======
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
 import classes from './index.module.scss'
 
@@ -58,71 +54,6 @@ export const CartPage: React.FC<{
               )}
             </div>
           ) : (
-<<<<<<< HEAD
-            <div className={classes.cartWrapper}>
-              <div>
-                {/* CART LIST HEADER */}
-                <div className={classes.header}>
-                  <p>Products</p>
-                  <div className={classes.headerItemDetails}>
-                    <p></p>
-                    <p></p>
-                    <p>Quantity</p>
-                  </div>
-                  <p className={classes.headersubtotal}>Subtotal</p>
-                </div>
-                {/* CART ITEM LIST */}
-                <ul className={classes.itemsList}>
-                  {cart?.items?.map((item, index) => {
-                    if (typeof item.product === 'object') {
-                      const {
-                        quantity,
-                        product,
-                        product: { id, title, meta, stripeProductID },
-                      } = item
-
-                      const isLast = index === (cart?.items?.length || 0) - 1
-
-                      const metaImage = meta?.image
-
-                      return (
-                        <CartItem
-                          product={product}
-                          title={title}
-                          metaImage={metaImage}
-                          qty={quantity}
-                          addItemToCart={addItemToCart}
-                        />
-                      )
-                    }
-                    return null
-                  })}
-                </ul>
-              </div>
-
-              <div className={classes.summary}>
-                <div className={classes.row}>
-                  <h6 className={classes.cartTotal}>Summary</h6>
-                </div>
-
-                <div className={classes.row}>
-                  <p className={classes.cartTotal}>Delivery Charge</p>
-                  <p className={classes.cartTotal}>$0</p>
-                </div>
-
-                <div className={classes.row}>
-                  <p className={classes.cartTotal}>Grand Total</p>
-                  <p className={classes.cartTotal}>{cartTotal.formatted}</p>
-                </div>
-
-                <Button
-                  className={classes.checkoutButton}
-                  href={user ? '/checkout' : '/login?redirect=%2Fcheckout'}
-                  label={user ? 'Checkout' : 'Login to checkout'}
-                  appearance="primary"
-                />
-              </div>
-=======
             <div className={classes.items}>
               <div className={classes.itemsTotal}>
                 {`There ${cart?.items?.length === 1 ? 'is' : 'are'} ${cart?.items?.length} item${
@@ -217,7 +148,6 @@ export const CartPage: React.FC<{
                 label={user ? 'Checkout' : 'Login to checkout'}
                 appearance="primary"
               />
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
             </div>
           )}
         </Fragment>

@@ -8,23 +8,15 @@ import { useRouter } from 'next/navigation'
 
 import { Settings } from '../../../../payload/payload-types'
 import { Button } from '../../../_components/Button'
-<<<<<<< HEAD
-import { LoadingShimmer } from '../../../_components/LoadingShimmer'
-=======
 import { HR } from '../../../_components/HR'
 import { LoadingShimmer } from '../../../_components/LoadingShimmer'
 import { Media } from '../../../_components/Media'
 import { Price } from '../../../_components/Price'
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 import { useAuth } from '../../../_providers/Auth'
 import { useCart } from '../../../_providers/Cart'
 import { useTheme } from '../../../_providers/Theme'
 import cssVariables from '../../../cssVariables'
 import { CheckoutForm } from '../CheckoutForm'
-<<<<<<< HEAD
-import { CheckoutItem } from '../CheckoutItem'
-=======
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
 import classes from './index.module.scss'
 
@@ -103,49 +95,6 @@ export const CheckoutPage: React.FC<{
       )}
       {!cartIsEmpty && (
         <div className={classes.items}>
-<<<<<<< HEAD
-          <div className={classes.header}>
-            <p>Products</p>
-            <div className={classes.headerItemDetails}>
-              <p></p>
-              <p className={classes.quantity}>Quantity</p>
-            </div>
-            <p className={classes.subtotal}>Subtotal</p>
-          </div>
-
-          <ul>
-            {cart?.items?.map((item, index) => {
-              if (typeof item.product === 'object') {
-                const {
-                  quantity,
-                  product,
-                  product: { title, meta },
-                } = item
-
-                if (!quantity) return null
-
-                const metaImage = meta?.image
-
-                return (
-                  <Fragment key={index}>
-                    <CheckoutItem
-                      product={product}
-                      title={title}
-                      metaImage={metaImage}
-                      quantity={quantity}
-                      index={index}
-                    />
-                  </Fragment>
-                )
-              }
-              return null
-            })}
-            <div className={classes.orderTotal}>
-              <p>Order Total</p>
-              <p>{cartTotal.formatted}</p>
-            </div>
-          </ul>
-=======
           {cart?.items?.map((item, index) => {
             if (typeof item.product === 'object') {
               const {
@@ -197,7 +146,6 @@ export const CheckoutPage: React.FC<{
             return null
           })}
           <div className={classes.orderTotal}>{`Order total: ${cartTotal.formatted}`}</div>
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
         </div>
       )}
       {!clientSecret && !error && (
@@ -213,10 +161,6 @@ export const CheckoutPage: React.FC<{
       )}
       {clientSecret && (
         <Fragment>
-<<<<<<< HEAD
-          <h3 className={classes.payment}>Payment Details</h3>
-=======
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
           {error && <p>{`Error: ${error}`}</p>}
           <Elements
             stripe={stripe}

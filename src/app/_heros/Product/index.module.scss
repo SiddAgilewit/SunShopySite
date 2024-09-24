@@ -1,15 +1,6 @@
 @use '../../_css/common.scss' as *;
 
 .productHero {
-<<<<<<< HEAD
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  width: 100%;
-
-  @include small-break {
-    grid-template-columns: 1fr;
-=======
   display: flex;
   gap: calc(var(--base) * 2);
 
@@ -54,19 +45,10 @@
 
   @include mid-break {
     width: 100%;
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   }
 }
 
 .mediaWrapper {
-<<<<<<< HEAD
-  position: relative;
-  min-height: 400px;
-  background-color: var(--color-dark-50);
-
-  @include small-break {
-    min-height: 250px;
-=======
   text-decoration: none;
   display: block;
   position: relative;
@@ -77,47 +59,10 @@
   @include mid-break {
     margin-left: calc(var(--gutter-h) * -1);
     width: calc(100% + var(--gutter-h) * 2);
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   }
 }
 
 .image {
-<<<<<<< HEAD
-  padding: 24px;
-  object-fit: contain;
-  aspect-ratio: 1/1;
-  max-width: 100%;
-}
-
-.details {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-}
-
-.categoryWrapper {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 16px;
-  margin-top: 8px;
-}
-
-.category {
-  font-size: 16px;
-}
-
-.stock {
-  color: var(--color-green-500);
-}
-
-.separator {
-  color: var(--color-gray-500);
-  padding: 0 10px;
-}
-
-.description {
-  padding: 30px 0;
-=======
   object-fit: cover;
 }
 
@@ -136,5 +81,4 @@
 
 .addToCartButton {
   margin-top: calc(var(--base) / 2);
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 }

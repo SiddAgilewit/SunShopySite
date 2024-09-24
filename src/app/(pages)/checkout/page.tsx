@@ -29,13 +29,6 @@ export default async function Checkout() {
   }
 
   return (
-<<<<<<< HEAD
-    <div className={classes.checkout}>
-      <Gutter>
-        <CheckoutPage settings={settings} />
-      </Gutter>
-    </div>
-=======
     <Fragment>
       {!process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY && (
         <Gutter>
@@ -110,7 +103,6 @@ export default async function Checkout() {
         <CheckoutPage settings={settings} />
       </Gutter>
     </Fragment>
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   )
 }
 

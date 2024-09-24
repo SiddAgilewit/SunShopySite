@@ -3,19 +3,11 @@ import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
-<<<<<<< HEAD
-import { Category, Page } from '../../../payload/payload-types'
-=======
 import { Page } from '../../../payload/payload-types'
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 import { staticHome } from '../../../payload/seed/home-static'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
 import { Blocks } from '../../_components/Blocks'
-<<<<<<< HEAD
-import { Gutter } from '../../_components/Gutter'
-=======
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 import { Hero } from '../../_components/Hero'
 import { generateMeta } from '../../_utilities/generateMeta'
 
@@ -27,22 +19,10 @@ import { generateMeta } from '../../_utilities/generateMeta'
 // If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
 export const dynamic = 'force-dynamic'
 
-<<<<<<< HEAD
-import Categories from '../../_components/Categories'
-import Promotion from '../../_components/Promotion'
-
-import classes from './index.module.scss'
-
-=======
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 export default async function Page({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()
 
   let page: Page | null = null
-<<<<<<< HEAD
-  let categories: Category[] | null = null
-=======
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
 
   try {
     page = await fetchDoc<Page>({
@@ -50,11 +30,6 @@ export default async function Page({ params: { slug = 'home' } }) {
       slug,
       draft: isDraftMode,
     })
-<<<<<<< HEAD
-
-    categories = await fetchDocs<Category>('categories')
-=======
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
   } catch (error) {
     // when deploying this template on Payload Cloud, this page needs to build before the APIs are live
     // so swallow the error here and simply render the page with fallback data where necessary
@@ -77,32 +52,11 @@ export default async function Page({ params: { slug = 'home' } }) {
 
   return (
     <React.Fragment>
-<<<<<<< HEAD
-      {slug === 'home' ? (
-        <section>
-          <Hero {...hero} />
-
-          <Gutter className={classes.home}>
-            <Categories categories={categories} />
-            <Promotion />
-          </Gutter>
-        </section>
-      ) : (
-        <>
-          <Hero {...hero} />
-          <Blocks
-            blocks={layout}
-            disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
-          />
-        </>
-      )}
-=======
       <Hero {...hero} />
       <Blocks
         blocks={layout}
         disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
       />
->>>>>>> 2ad312393c380ac1bebb34b2fed6d8ee7538bde1
     </React.Fragment>
   )
 }
