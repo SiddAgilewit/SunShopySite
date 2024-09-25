@@ -9,11 +9,11 @@
   --font-jost: 'Jost', sans-serif; 
 
   --gutter-h: 90px;
-  --block-padding: 80px; // Reduced block padding for desktop
+  --block-padding: 80px; 
 
   @include large-break {
     --gutter-h: 94px;
-    --block-padding: 60px; // Further reduce for larger screens
+    --block-padding: 60px; 
   } 
 
   @include mid-break {
