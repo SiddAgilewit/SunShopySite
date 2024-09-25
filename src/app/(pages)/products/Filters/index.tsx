@@ -28,7 +28,11 @@ const Filters = ({ categories }: { categories: Category[] | null | undefined }) 
   return (
     <div className={classes.filters}>
       <div>
+<<<<<<< HEAD
         <h6 className={classes.title}>Product Categories</h6>
+=======
+        <h6 className={classes.title}>Categorie</h6>
+>>>>>>> f694812d1cf77280724c8ace66d05f5793e77371
         <div className={classes.categories}>
           {safeCategories.length > 0 ? (
             safeCategories.map(category => {

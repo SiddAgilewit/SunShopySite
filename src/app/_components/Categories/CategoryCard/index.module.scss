@@ -2,12 +2,15 @@
 
 .card {
   position: relative;
-  background-color: var(--color-dark-50);
-  min-height: 360px;
+  border: solid 1px black;
+  border-radius: 6px;
+  height: 360px;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+  gap: 20px;
   padding: 20px;
   cursor: pointer;
 

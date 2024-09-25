@@ -14,7 +14,7 @@
   @include large-break {
     --gutter-h: 94px;
     --block-padding: 60px; // Further reduce for larger screens
-  }
+  } 
 
   @include mid-break {
     --gutter-h: 24px;
