@@ -23,7 +23,7 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
       onClick={() => setCategoryFilters([category.id])}
     >
       {media.url ? (
-        <img src={media.url} alt={category.title} className={classes.image} />
+        <img src={media.url} alt={category.title} style={{height:"260px",width:"240px"}} />
       ) : (
         <div className={classes.placeholder}>No Image Available</div>
       )}
