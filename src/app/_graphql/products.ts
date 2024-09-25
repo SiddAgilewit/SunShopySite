@@ -1,7 +1,10 @@
 import type { PayloadHandler } from 'payload/config';
 import type { PayloadRequest } from 'payload/types';
 import Stripe from 'stripe';
-import { checkRole } from '../collections/Users/checkRole';
+import { checkRole } from '../../payload/collections/Users/checkRole';
+import { PRODUCT_CATEGORIES } from './categories';
+import { ARCHIVE_BLOCK, CALL_TO_ACTION, CONTENT, MEDIA_BLOCK } from './blocks';
+import { META } from './meta';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
   apiVersion: '2022-08-01',
