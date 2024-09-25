@@ -42,7 +42,7 @@ const CartItem = ({ product, title, metaImage, qty, addItemToCart }) => {
           <Media className={classes.media} imgClassName={classes.image} resource={metaImage} fill />
         )}
       </Link>
-<p>Sidd</p>
+
       <div className={classes.itemDetails}>
         <div className={classes.titleWrapper}>
           <p>{title}</p>
