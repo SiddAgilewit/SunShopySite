@@ -6,7 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
   apiVersion: '2022-08-01',
 });
 
-// this endpoint creates a `PaymentIntent` with the items in the cart
+// This endpoint creates a `PaymentIntent` with the items in the cart
 export const createPaymentIntent: PayloadHandler = async (req, res): Promise<void> => {
   const { user, payload } = req;
 
@@ -28,7 +28,7 @@ export const createPaymentIntent: PayloadHandler = async (req, res): Promise<voi
   try {
     let stripeCustomerID = fullUser.stripeCustomerID;
 
-    // lookup user in Stripe and create one if not found
+    // Lookup user in Stripe and create one if not found
     if (!stripeCustomerID) {
       const customer = await stripe.customers.create({
         email: fullUser.email || '', // Provide a default value to avoid undefined
@@ -54,9 +54,9 @@ export const createPaymentIntent: PayloadHandler = async (req, res): Promise<voi
       throw new Error('No items in cart');
     }
 
-    // for each item in cart, lookup the product in Stripe and add its price to the total
+    // For each item in cart, lookup the product in Stripe and add its price to the total
     await Promise.all(
-      fullUser.cart.items.map(async (item: CartItems[0]): Promise<void> => { // Use void instead of null
+      fullUser.cart.items.map(async (item: CartItems[number]): Promise<void> => { // Use number for proper indexing
         const { product, quantity } = item;
 
         if (!quantity) {

@@ -1,12 +1,11 @@
 import type { User } from '../../payload-types';
 
 export const checkRole = (allRoles: User['roles'] = [], user?: User): boolean => {
-  if (user && user.roles) { // Ensure user and user.roles are defined
-    return allRoles.some(role => {
-      return user.roles.some(individualRole => {
-        return individualRole === role;
-      });
-    });
+  // Ensure user is defined and has roles
+  if (user?.roles && Array.isArray(user.roles)) {
+    return allRoles.some(role => 
+      user.roles.includes(role) // Use includes for cleaner syntax
+    );
   }
 
   return false; 
