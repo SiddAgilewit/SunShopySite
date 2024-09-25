@@ -6,13 +6,11 @@ import { PRODUCT_CATEGORIES } from './categories';
 import { ARCHIVE_BLOCK, CALL_TO_ACTION, CONTENT, MEDIA_BLOCK } from './blocks';
 import { META } from './meta';
 
-// Ensure the Stripe secret key is available
+// Ensure the Stripe secret key is available and is a string
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
-if (!stripeSecretKey) {
-  throw new Error('Stripe secret key is not defined in environment variables.');
+if (!stripeSecretKey || typeof stripeSecretKey !== 'string') {
+  throw new Error('Stripe secret key is not defined or is not a string in environment variables.');
 }
-
-console.log('Stripe Secret Key:', stripeSecretKey); // Debug log
 
 const stripe = new Stripe(stripeSecretKey, {
   apiVersion: '2022-08-01',
