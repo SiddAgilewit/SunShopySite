@@ -35,7 +35,7 @@ export const deleteProductFromCarts: AfterDeleteHook<Product> = async ({ req, id
 
             // Ensure user.id is a valid string
             if (typeof user.id === 'string') {
-              return req.payload.update({
+              await req.payload.update({
                 collection: 'users',
                 id: user.id,
                 data: {
