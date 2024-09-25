@@ -24,7 +24,7 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
       <img
         src={media.url}
         alt={category.title}
-        className={classes.image} // Add a class for styling if needed
+        className={classes.image} 
       />
       <p className={classes.title}>{category.title}</p>
     </Link>
