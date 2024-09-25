@@ -27,6 +27,15 @@ export const CartPage: React.FC<{
 
   const { cart, cartIsEmpty, addItemToCart, cartTotal, hasInitializedCart } = useCart()
 
+
+  const cartTotalAmount = parseFloat(cartTotal?.formatted?.replace('$', '') || '0')
+
+
+  const deliveryCharge = cartTotalAmount >= 150 ? 0 : 10
+
+
+  const grandTotal = cartTotalAmount + deliveryCharge
+
   return (
     <Fragment>
       <br />
@@ -103,12 +112,12 @@ export const CartPage: React.FC<{
 
                 <div className={classes.row}>
                   <p className={classes.cartTotal}>Delivery Charge</p>
-                  <p className={classes.cartTotal}>$0</p>
+                  <p className={classes.cartTotal}>${deliveryCharge}</p>
                 </div>
 
                 <div className={classes.row}>
                   <p className={classes.cartTotal}>Grand Total</p>
-                  <p className={classes.cartTotal}>{cartTotal.formatted}</p>
+                  <p className={classes.cartTotal}>${grandTotal.toFixed(2)}</p>
                 </div>
 
                 <Button

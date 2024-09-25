@@ -11,7 +11,12 @@
 
   @include large-break {
     grid-template-columns: 1fr;
+  
   }
+  @include small-break {
+    width: 300px;
+  
+   }
 }
 
 .header {
@@ -43,6 +48,9 @@
   padding: 30px 24px;
   border: 1px solid black;
   border-radius: 6px;
+  @include small-break {
+   width: 300px;
+  }
 }
 
 .row {
