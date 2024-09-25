@@ -17,6 +17,7 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
  
 
   return (
+<<<<<<< HEAD
     <Link 
       href="/products" 
       className={classes.card} 
@@ -27,6 +28,18 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
       ) : (
         <div className={classes.placeholder}>No Image Available</div>
       )}
+=======
+    <Link
+      href="/products"
+      className={classes.card}
+      onClick={() => setCategoryFilters([category.id])}
+    >
+      <img
+        src={media.url}
+        alt={category.title}
+        className={classes.image} 
+      />
+>>>>>>> d343c9eed293f4e1db86c9904c1c68e365ed849a
       <p className={classes.title}>{category.title}</p>
 
     </Link>
