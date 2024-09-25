@@ -28,7 +28,7 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
         <div className={classes.placeholder}>No Image Available</div>
       )}
       <p className={classes.title}>{category.title}</p>
-      
+
     </Link>
   )
 }
