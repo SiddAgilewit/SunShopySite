@@ -10,16 +10,19 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
 export const createPaymentIntent: PayloadHandler = async (req, res): Promise<void> => {
   const { user, payload } = req;
 
+  // Check if user is defined
   if (!user) {
     res.status(401).send('Unauthorized');
     return;
   }
 
+  // Find the full user details
   const fullUser = await payload.findByID({
     collection: 'users',
     id: user.id,
   });
 
+  // Check if user was found
   if (!fullUser) {
     res.status(404).json({ error: 'User not found' });
     return;
@@ -37,6 +40,7 @@ export const createPaymentIntent: PayloadHandler = async (req, res): Promise<voi
 
       stripeCustomerID = customer.id;
 
+      // Update the user with the new Stripe customer ID
       await payload.update({
         collection: 'users',
         id: user.id,
@@ -48,31 +52,38 @@ export const createPaymentIntent: PayloadHandler = async (req, res): Promise<voi
 
     let total = 0;
 
-    const hasItems = fullUser.cart?.items?.length > 0; // Safe check for cart and items
+    // Safe check for cart and its items
+    const cart = fullUser.cart || {}; // Use an empty object if cart is undefined
+    const items: CartItems = cart.items || []; // Use an empty array if items is null or undefined
 
-    if (!hasItems) {
+    // Ensure there are items in the cart
+    if (items.length === 0) {
       throw new Error('No items in cart');
     }
 
-    // For each item in cart, lookup the product in Stripe and add its price to the total
+    // Process each item in cart
     await Promise.all(
-      fullUser.cart.items.map(async (item: CartItems[number]): Promise<void> => { // Use number for proper indexing
+      items.map(async (item): Promise<void> => { // Here we let TypeScript infer the type
         const { product, quantity } = item;
 
+        // Check if quantity is defined
         if (!quantity) {
           return; // Just return if no quantity
         }
 
+        // Ensure product is a valid object and has a Stripe Product ID
         if (typeof product === 'string' || !product?.stripeProductID) {
           throw new Error('No Stripe Product ID');
         }
 
+        // List prices for the product
         const prices = await stripe.prices.list({
           product: product.stripeProductID,
           limit: 100,
           expand: ['data.product'],
         });
 
+        // Check if any prices were found
         if (prices.data.length === 0) {
           res.status(404).json({ error: 'There are no items in your cart to checkout with' });
           return; // Early return if no prices found
@@ -85,10 +96,12 @@ export const createPaymentIntent: PayloadHandler = async (req, res): Promise<voi
       }),
     );
 
+    // Check if total is zero
     if (total === 0) {
       throw new Error('There is nothing to pay for, add some items to your cart and try again.');
     }
 
+    // Create the PaymentIntent
     const paymentIntent = await stripe.paymentIntents.create({
       customer: stripeCustomerID,
       amount: total,

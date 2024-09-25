@@ -39,10 +39,11 @@ dotenv.config({
   path: path.resolve(__dirname, '../../.env'),
 });
 
+// Ensure the following variables are properly defined
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY || '';
-const databaseUri = process.env.DATABASE_URI;
-const serverUrl = process.env.PAYLOAD_PUBLIC_SERVER_URL || '';
-const stripeWebhookSecret = process.env.STRIPE_WEBHOOKS_SIGNING_SECRET || '';
+const databaseUri = process.env.DATABASE_URI || ''; // Default to an empty string if undefined
+const serverUrl = process.env.PAYLOAD_PUBLIC_SERVER_URL || ''; // Default to an empty string if undefined
+const stripeWebhookSecret = process.env.STRIPE_WEBHOOKS_SIGNING_SECRET || ''; // Default to an empty string if undefined
 
 export default buildConfig({
   admin: {
@@ -114,8 +115,8 @@ export default buildConfig({
   plugins: [
     stripePlugin({
       stripeSecretKey,
-      isTestKey: Boolean(process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY),
-      stripeWebhooksEndpointSecret: stripeWebhookSecret, // Updated line
+      isTestKey: Boolean(process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY), // Will be false if undefined
+      stripeWebhooksEndpointSecret: stripeWebhookSecret,
       rest: false,
       webhooks: {
         'product.created': productUpdated,
