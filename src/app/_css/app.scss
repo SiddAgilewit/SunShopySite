@@ -5,8 +5,8 @@
 
 :root {
   --base: 24px;
-  --font-body: 'Georgia', serif; 
-  --font-jost: 'Jost', sans-serif; 
+  --font-body: system-ui;
+  --font-mono: 'Roboto Mono', monospace;
 
   --gutter-h: 90px;
   --block-padding: 80px; 
@@ -45,28 +45,19 @@ body,
 }
 
 body {
-  font-family: var(--font-body); // Use Georgia for body font
+  font-family: var(--font-body);
   margin: 0;
-  padding: 0;
-  color: var(--color-dark-500);
-
-  display: flex;
-  flex-flow: column;
-}
-
-.main {
-  flex: 1 1 auto;
-  background-color: rgba(141, 246, 246, 0.895);
-  padding: var(--block-padding); // Apply adjusted padding
+  color: var(--theme-text);
 }
 
 ::selection {
-  background: var(--color-dark-500);
+  background: var(--theme-success-500);
+
   color: var(--color-base-800);
 }
 
 ::-moz-selection {
-  background: var(--color-dark-50);
+  background: var(--theme-success-500);
   color: var(--color-base-800);
 }
 
@@ -87,19 +78,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  margin: 0;
+  margin: var(--base) 0;
+
+  @include mid-break {
+    margin: calc(var(--base) * .75) 0;
+  }
 }
 
 ul,
 ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  padding-left: var(--base);
+  margin: 0 0 var(--base);
 }
 
 a {
-  color: var(--color-dark-500);
-  text-decoration: none;
+  color: currentColor;
 
   &:focus {
     opacity: 0.8;
