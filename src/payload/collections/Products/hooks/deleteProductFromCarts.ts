@@ -1,5 +1,5 @@
-import type { AfterDeleteHook } from 'payload/dist/collections/config/types'; 
-import type { Product, User } from '../../../payload-types'; // Ensure User is imported if needed
+import type { AfterDeleteHook } from 'payload/dist/collections/config/types';
+import type { Product, User } from '../../../payload-types';
 
 export const deleteProductFromCarts: AfterDeleteHook<Product> = async ({ req, id }) => {
   // Ensure 'id' is valid before proceeding
@@ -35,16 +35,26 @@ export const deleteProductFromCarts: AfterDeleteHook<Product> = async ({ req, id
 
             // Ensure user.id is a valid string
             if (typeof user.id === 'string') {
+              // Create the data object to update
+              const updateData = {
+                // Add all necessary fields here; only include what’s required
+                id: user.id, // Ensure id is included
+                cart: {
+                  items: cartWithoutProduct.items,
+                  // Include other cart properties if needed
+                },
+                // Add other user properties as needed to fulfill the expected type
+                // Example:
+                name: user.name || null, // or provide existing values
+                roles: user.roles || null,
+                purchases: user.purchases || null,
+                // Add more fields if necessary
+              };
+
               await req.payload.update({
                 collection: 'users',
                 id: user.id,
-                data: {
-                  cart: {
-                    items: cartWithoutProduct.items, // Ensure this matches User type
-                    // Add any other properties from the cart as needed
-                    // e.g., totalAmount: cartWithoutProduct.totalAmount
-                  },
-                },
+                data: updateData,
               });
             }
           }
