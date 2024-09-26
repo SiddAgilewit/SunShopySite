@@ -2,7 +2,6 @@ import type { AfterDeleteHook } from 'payload/dist/collections/config/types';
 import type { Product, User } from '../../../payload-types';
 
 export const deleteProductFromCarts: AfterDeleteHook<Product> = async ({ req, id }) => {
-  // Ensure 'id' is valid before proceeding
   if (!id) {
     throw new Error('Invalid product ID');
   }
@@ -17,47 +16,29 @@ export const deleteProductFromCarts: AfterDeleteHook<Product> = async ({ req, id
     },
   });
 
-  // Check if users are found
   if (usersWithProductInCart.totalDocs > 0) {
     await Promise.all(
       usersWithProductInCart.docs.map(async (user) => {
-        // Ensure user and their cart are defined
-        if (user && user.cart) {
-          const cart = user.cart;
+        if (user && user.cart && Array.isArray(user.cart.items)) {
+          const itemsWithoutProduct = user.cart.items.filter(item => item.product !== id);
+          const cartWithoutProduct = {
+            ...user.cart,
+            items: itemsWithoutProduct,
+          };
 
-          // Ensure cart items are an array
-          if (Array.isArray(cart.items)) {
-            const itemsWithoutProduct = cart.items.filter(item => item.product !== id);
-            const cartWithoutProduct = {
-              ...cart,
-              items: itemsWithoutProduct,
-            };
+          const updateData: Partial<User> = {
+            id: user.id, // Ensure this is valid
+            cart: cartWithoutProduct,
+            name: user.name || null, // Ensure these fields are optional or provide defaults
+            roles: user.roles || null,
+            purchases: user.purchases || null,
+          };
 
-            // Ensure user.id is a valid string
-            if (typeof user.id === 'string') {
-              // Create the data object to update
-              const updateData = {
-                // Add all necessary fields here; only include what’s required
-                id: user.id, // Ensure id is included
-                cart: {
-                  items: cartWithoutProduct.items,
-                  // Include other cart properties if needed
-                },
-                // Add other user properties as needed to fulfill the expected type
-                // Example:
-                name: user.name || null, // or provide existing values
-                roles: user.roles || null,
-                purchases: user.purchases || null,
-                // Add more fields if necessary
-              };
-
-              await req.payload.update({
-                collection: 'users',
-                id: user.id,
-                data: updateData,
-              });
-            }
-          }
+          await req.payload.update({
+            collection: 'users',
+            id: user.id,
+            data: updateData,
+          });
         }
       }),
     );
